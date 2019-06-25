@@ -3,6 +3,7 @@ package io.github.manuelernesto.mvvmapp.ui.auth
 import android.view.View
 import androidx.lifecycle.ViewModel
 import io.github.manuelernesto.mvvmapp.data.repository.UserRepository
+import io.github.manuelernesto.mvvmapp.util.Coroutines
 
 class AuthViewModel : ViewModel() {
 
@@ -20,7 +21,13 @@ class AuthViewModel : ViewModel() {
         }
 
         //success
-        val loginResponse = UserRepository().userLogin(email!!, password!!)
-        authListener?.onSuccess(loginResponse)
+        Coroutines.main {
+            val response = UserRepository().userLogin(email!!, password!!)
+            if (response.isSuccessful) {
+                authListener?.onSuccess(response.body()?.user!!)
+            } else {
+                authListener?.onFailure("Error Code: ${response.code()}")
+            }
+        }
     }
 }

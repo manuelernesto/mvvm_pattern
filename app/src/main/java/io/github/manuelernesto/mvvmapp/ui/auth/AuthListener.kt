@@ -1,9 +1,9 @@
 package io.github.manuelernesto.mvvmapp.ui.auth
 
-import androidx.lifecycle.LiveData
+import io.github.manuelernesto.mvvmapp.data.db.entities.User
 
 interface AuthListener {
     fun onStarted()
     fun onFailure(message: String)
-    fun onSuccess(loginResponse: LiveData<String>)
+    fun onSuccess(user: User)
 }

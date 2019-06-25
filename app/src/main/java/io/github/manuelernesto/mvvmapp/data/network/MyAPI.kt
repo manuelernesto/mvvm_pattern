@@ -1,7 +1,7 @@
 package io.github.manuelernesto.mvvmapp.data.network
 
-import okhttp3.ResponseBody
-import retrofit2.Call
+import io.github.manuelernesto.mvvmapp.data.network.responses.AuthResponse
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Field
@@ -11,8 +11,11 @@ import retrofit2.http.POST
 interface MyAPI {
 
     @FormUrlEncoded
-    @POST("login")
-    fun userLogin(@Field("email") email: String, @Field("password") password: String): Call<ResponseBody>
+    @POST(value = "login")
+    suspend fun userLogin(
+        @Field(value = "email") email: String,
+        @Field(value = "password") password: String
+    ): Response<AuthResponse>
 
     companion object {
         operator fun invoke(): MyAPI {
