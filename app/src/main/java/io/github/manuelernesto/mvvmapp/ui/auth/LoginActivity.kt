@@ -10,6 +10,7 @@ import io.github.manuelernesto.mvvmapp.data.db.entities.User
 import io.github.manuelernesto.mvvmapp.databinding.ActivityLoginBinding
 import io.github.manuelernesto.mvvmapp.util.hide
 import io.github.manuelernesto.mvvmapp.util.show
+import io.github.manuelernesto.mvvmapp.util.snackbar
 import io.github.manuelernesto.mvvmapp.util.toast
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -27,17 +28,19 @@ class LoginActivity : AppCompatActivity(), AuthListener {
 
     override fun onStarted() {
         progress_bar.show()
-        toast("Login Started")
+        // toast("Login Started")
     }
 
     override fun onFailure(message: String) {
         progress_bar.hide()
-        toast(message)
+        root_layout.snackbar(message)
+//        toast(message)
     }
 
     override fun onSuccess(user: User) {
         progress_bar.hide()
-        toast("User Name: ${user.name}")
+        root_layout.snackbar("User Name: ${user.name}")
+//        toast("User Name: ${user.name}")
     }
 
 }
