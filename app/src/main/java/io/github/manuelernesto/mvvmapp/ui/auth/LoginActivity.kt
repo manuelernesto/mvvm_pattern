@@ -19,21 +19,17 @@ import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
 
 class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
-
-    override val kodein by kodein()
-    private val factory: AuthViewModelFactory  by instance()
-
-    override
-
-    fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
 //        val networkConnectionInterceptor = NetworkConnectionInterceptor(this)
 //        val api = MyAPI(networkConnectionInterceptor)
 //        val db = AppDatabase(this)
 //        val repository = UserRepository(api, db)
 //        val factory = AuthViewModelFactory(repository)
 
+    override val kodein by kodein()
+    private val factory: AuthViewModelFactory  by instance()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         val binding: ActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         val viewModel: AuthViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel::class.java)
