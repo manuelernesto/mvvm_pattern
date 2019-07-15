@@ -13,7 +13,7 @@ import io.github.manuelernesto.mvvmapp.data.db.entities.User
 interface QuoteDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun saveAllQuotes(quotes: List<Quote>): Long
+    fun saveAllQuotes(quotes: List<Quote>)
 
     @Query(value = "select * from quote")
     fun getQuotes(): LiveData<List<Quote>>
