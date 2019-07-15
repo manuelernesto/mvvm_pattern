@@ -6,5 +6,8 @@
 
     <fragment android:id="@+id/profileFragment"
               android:name="io.github.manuelernesto.mvvmapp.ui.home.profile.ProfileFragment"
-              android:label="profile_fragment" tools:layout="@layout/profile_fragment"/>
+              android:label="Profile" tools:layout="@layout/profile_fragment"/>
+    <fragment android:id="@+id/quotesFragment"
+              android:name="io.github.manuelernesto.mvvmapp.ui.home.quotes.QuotesFragment"
+              android:label="Quotes" tools:layout="@layout/quotes_fragment"/>
 </navigation>
