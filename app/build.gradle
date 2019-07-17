@@ -45,8 +45,8 @@ dependencies {
 
 
     //android navigation architecture
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0-alpha05' //for kotlin use navigation-fragment-ktx
-    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0-alpha05' //for kotlin use navigation-ui-ktx
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0-alpha06' //for kotlin use navigation-fragment-ktx
+    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0-alpha06' //for kotlin use navigation-ui-ktx
 
 
     //  retrofit

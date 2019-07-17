@@ -3,7 +3,6 @@ package io.github.manuelernesto.mvvmapp.data.db.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-//probelalkhan@gmail.com
 const val CURRENT_USER_ID = 0
 
 @Entity
