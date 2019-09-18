@@ -1,6 +1,5 @@
 package io.github.manuelernesto.mvvmapp.util
 
-import android.accounts.NetworkErrorException
 import java.io.IOException
 
 class ApiExeption(message: String) : IOException(message)

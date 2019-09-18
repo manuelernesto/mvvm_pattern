@@ -2,7 +2,7 @@ package io.github.manuelernesto.mvvmapp.data.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import androidx.core.content.edit
 
 private const val KEY_SAVED_AT = "key_saved_at"
